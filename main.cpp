@@ -4,8 +4,10 @@
 #include "string_func.h"
 #include <assert.h>
 
+size_t find_n_strings( char* const buffer, const size_t buffer_size);  // find count of string and replace '\n' to '\0'
 
-void link_text_and_buf(char** text, char* buffer, size_t buffer_size)
+
+void link_text_and_buf(char** const text,  char* const buffer, const size_t buffer_size)
 {
 	text[0] = buffer; // присваиваем первому указателю text ссылку на первый элемент buffer, то есть на первую строку
 
@@ -29,24 +31,23 @@ void link_text_and_buf(char** text, char* buffer, size_t buffer_size)
 }
 
 
-void free_all(char** text, char* buffer, size_t n_strings)
+void free_all(char** text, char* buffer)
 {
 	/* free buffer */
 	free(buffer);
+	buffer = 0;
+	printf("buffer is free\n");
 	/* free buffer */
 
 	/* free text */
-	for (size_t n_string = 0; n_string < n_strings; n_string++)
-	{
-		free(text[n_string]);
-	}
 	free(text);
+	printf("text is free\n");
 	text = 0;
 	/* free text*/
 }
 
 
-void swap_strings(char** pos_1_ptr, char** pos_2_ptr)
+void swap_strings(char** const pos_1_ptr, char** const pos_2_ptr)
 {
 	char* temp = *pos_1_ptr;
 	*pos_1_ptr = *pos_2_ptr;
@@ -54,7 +55,7 @@ void swap_strings(char** pos_1_ptr, char** pos_2_ptr)
 }
 
 
-void print_text(char** text, size_t n_strings)
+void print_text(const char* const * const text, const size_t n_strings)
 {
 	for (size_t n_string = 0; n_string < n_strings; n_string++)
 	{
@@ -63,7 +64,7 @@ void print_text(char** text, size_t n_strings)
 }
 
 
-void print_text_info(char** text, size_t n_strings)
+void print_and_sort(char** const text, const size_t n_strings)
 {
 	print_text(text, n_strings);
 
@@ -77,7 +78,7 @@ void print_text_info(char** text, size_t n_strings)
 }
 
 
-enum comp_two_str compare_two_strings(char* str1, char* str2)
+enum comp_two_str compare_two_strings(const char* const str1, const char* const str2)
 {
 	for (size_t char_number = 0;;char_number++)
 	{
@@ -101,8 +102,7 @@ enum comp_two_str compare_two_strings(char* str1, char* str2)
 }
 
 
-
-void sort_strings(char** text, size_t n_strings)
+void sort_strings(char** const text, size_t n_strings)
 {
 	for (size_t i = 0; i < n_strings; i++)
 	{
@@ -115,6 +115,7 @@ void sort_strings(char** text, size_t n_strings)
 		}
 	}
 }
+
 
 int main()
 {
@@ -142,9 +143,12 @@ int main()
 
 	printf("%zu", buffer_size);
 
-	char* text[n_strings] = {};
+	char** text = (char**) calloc(n_strings, sizeof(char*));
 
 	link_text_and_buf(text, buffer, buffer_size);
 
-	free_all(text, buffer, n_strings);
+	print_and_sort(text, n_strings);
+
+
+	free_all(text, buffer);
 }
