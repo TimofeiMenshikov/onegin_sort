@@ -5,9 +5,7 @@
 #include "string_func.h"
 #include "string_compare.h"
 #include "sort.h"
-
-
-size_t find_n_strings( char* const buffer, const size_t buffer_size);  // find count of string and replace '\n' to '\0'
+#include "print.h"
 
 
 void link_text_and_buf(char** const text,  char* const buffer, const size_t buffer_size)
@@ -56,38 +54,6 @@ void free_all(char** text, char* buffer, size_t* string_lengths)
 }
 
 
-void print_text(const char* const * const text, const size_t n_strings)
-{
-	for (size_t n_string = 0; n_string < n_strings; n_string++)
-	{
-		printf("string number %zu: <%s>\n", n_string, text[n_string]);
-	}
-}
-
-
-void print_and_sort(char** const text, const size_t n_strings)
-{
-	print_text(text, n_strings);
-
-	printf("_._._._._._._\n");
-
-	printf("sorted strings: \n");
-
-	sort_strings(text, n_strings);
-
-	print_text(text, n_strings);	
-
-	printf("------------------\n");
-
-	printf("returned back: \n");
-
-	sort_ptrs(text, n_strings);
-
-	print_text(text, n_strings);
-}
-
-
-
 size_t* find_str_lens(const char* const * const text, size_t n_strings)
 {
 	size_t* string_lengths = (size_t*) calloc(n_strings, sizeof(size_t)); 
@@ -96,7 +62,7 @@ size_t* find_str_lens(const char* const * const text, size_t n_strings)
 
 	for (size_t n_string = 0; n_string < n_strings; n_string++)
 	{
-		//string_lengths[n_string] = strlen(text[n_string]);
+		string_lengths[n_string] = strlen(text[n_string]);
 		printf("find strlen %zu\n", n_string);
 	}
 
@@ -132,13 +98,13 @@ int main()
 
 	printf("calloc text \n");
 
-	size_t* string_lengths = find_str_lens(text, n_strings);
-
-
-
 	link_text_and_buf(text, buffer, buffer_size);
 
-	print_and_sort(text, n_strings);
+
+	size_t* string_lengths = find_str_lens(text, n_strings); // запуск строго после find_n_strings, так как использует \0 при расчете длин строк
+
+	print_and_sort(text, n_strings, string_lengths);
+
 
 
 	free_all(text, buffer, string_lengths);
