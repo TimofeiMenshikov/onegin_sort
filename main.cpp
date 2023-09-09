@@ -1,8 +1,11 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <malloc.h>
-#include "string_func.h"
 #include <assert.h>
+#include "string_func.h"
+#include "string_compare.h"
+#include "sort.h"
+
 
 size_t find_n_strings( char* const buffer, const size_t buffer_size);  // find count of string and replace '\n' to '\0'
 
@@ -53,14 +56,6 @@ void free_all(char** text, char* buffer, size_t* string_lengths)
 }
 
 
-void swap_strings(char** const pos_1_ptr, char** const pos_2_ptr)
-{
-	char* temp = *pos_1_ptr;
-	*pos_1_ptr = *pos_2_ptr;
-	*pos_2_ptr = temp; 
-}
-
-
 void print_text(const char* const * const text, const size_t n_strings)
 {
 	for (size_t n_string = 0; n_string < n_strings; n_string++)
@@ -81,46 +76,16 @@ void print_and_sort(char** const text, const size_t n_strings)
 	sort_strings(text, n_strings);
 
 	print_text(text, n_strings);	
+
+	printf("------------------\n");
+
+	printf("returned back: \n");
+
+	sort_ptrs(text, n_strings);
+
+	print_text(text, n_strings);
 }
 
-
-enum comp_two_str compare_two_strings(const char* const str1, const char* const str2)
-{
-	for (size_t char_number = 0;;char_number++)
-	{
-		if (str1[char_number] == '\0' && str2[char_number] == '\0')
-		{
-			return FIRST_IS_LEFT;
-		}
-
-		if (str1[char_number] < str2[char_number])
-		{
-			return FIRST_IS_LEFT;
-		}
-
-		if (str1[char_number] > str2[char_number])
-		{
-			return FIRST_IS_RIGHT;
-		}
-	}
-
-	return FIRST_IS_LEFT;
-}
-
-
-void sort_strings(char** const text, size_t n_strings)
-{
-	for (size_t i = 0; i < n_strings; i++)
-	{
-		for (size_t j = i + 1; j < n_strings; j++)
-		{
-			if (compare_two_strings(text[i], text[j]) == FIRST_IS_RIGHT)
-			{
-				swap_strings(text + i, text + j);
-			}
-		}
-	}
-}
 
 
 size_t* find_str_lens(const char* const * const text, size_t n_strings)

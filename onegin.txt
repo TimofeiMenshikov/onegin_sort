@@ -1,6 +1,7 @@
-abc
-def
-abf
-dbc
-dbcf
-aaa
+abc .. efg
+abca
+hello world
+meow
+bark bark 
+edinichka
+poltorashka
