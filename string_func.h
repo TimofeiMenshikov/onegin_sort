@@ -17,4 +17,8 @@ void free_all(char** text, char* buffer, size_t n_strings);
 void swap_strings(char** pos_1_ptr, char** pos_2_ptr);
 void print_text(char** text, size_t n_strings);
 
+enum comp_two_str compare_two_strings(char* str1, char* str2);
+void sort_strings(char** text, size_t n_strings);
+
+
 #endif /* STRING_FUNCTION_H */

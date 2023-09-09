@@ -7,9 +7,13 @@ size_t find_real_buf_size(char* buffer, size_t buffer_size) // отбрасыв�
 {
 	printf("buffer size is before for %zu \n", buffer_size);
 
-	for (; buffer[buffer_size] == '\0'; buffer_size--); // убираем все \0 в конце
+	size_t char_number = 0;
 
-	buffer_size = buffer_size + 2; // добавляем один элемент для окончания строки (\n или \0)
+	for (char_number = 0; buffer[char_number] != '\0'; char_number++); // просчитываем все значения char до '\0'
+
+	buffer_size = char_number;
+
+	buffer_size = buffer_size + 1; // добавляем один элемент для окончания строки (\n или \0)
 
 	buffer[buffer_size] = '\0';
 
@@ -29,7 +33,7 @@ size_t find_n_strings(char* buffer, size_t buffer_size)  // find count of string
 			buffer[char_number] = '\0';
 		}
 	}
-	return n_strings;
+	return n_strings + 1; // последний элемент \0 - конец строки, а мы его не посчитали
 }
 
 
