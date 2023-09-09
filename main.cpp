@@ -72,6 +72,22 @@ size_t* find_str_lens(const char* const * const text, size_t n_strings)
 }
 
 
+size_t find_max_str(size_t* string_lengths, size_t n_strings)
+{
+	size_t maxlen = 0;
+
+	for (size_t n_string = 0; n_string < n_strings; n_string++)
+	{
+		if (maxlen < string_lengths[n_string])
+		{
+			maxlen = string_lengths[n_string];
+		}		
+	}
+
+	return maxlen;
+}
+
+
 int main()
 {
 	struct stat buffer_info;
@@ -102,6 +118,10 @@ int main()
 
 
 	size_t* string_lengths = find_str_lens(text, n_strings); // запуск строго после find_n_strings, так как использует \0 при расчете длин строк
+
+	size_t maxlen = find_max_str(string_lengths, n_strings);
+
+	printf("the biggest len of string is %zu\n", maxlen);
 
 	print_and_sort(text, n_strings, string_lengths);
 

@@ -3,16 +3,27 @@
 #include "string_compare.h"
 
 
-void sort_strings(char** const text, size_t n_strings, size_t* string_lengths)
+void sort_strings(char** const text, size_t n_strings, size_t* string_lengths, bool reverse)
 {
 	for (size_t i = 0; i < n_strings; i++)
 	{
 		for (size_t j = i + 1; j < n_strings; j++)
 		{
-			if (compare_two_strings(text[i], text[j]) == FIRST_IS_RIGHT)
+			if (reverse == true)
 			{
-				swap_strings(text + i, text + j);
-				swap_str_lens(string_lengths + i, string_lengths + j);
+				if (compare_two_strings_reversed(text[i], text[j], string_lengths[i], string_lengths[j]) == FIRST_IS_RIGHT)
+				{
+					swap_strings(text + i, text + j);
+					swap_str_lens(string_lengths + i, string_lengths + j);
+				}
+			}
+			else
+			{
+				if (compare_two_strings(text[i], text[j]) == FIRST_IS_RIGHT)
+				{
+					swap_strings(text + i, text + j);
+					swap_str_lens(string_lengths + i, string_lengths + j);
+				}
 			}
 		}
 	}

@@ -12,7 +12,6 @@ void print_text(const char* const * const text, const size_t n_strings)
 }
 
 
-
 void print_and_sort(char** const text, const size_t n_strings, size_t* string_lengths)
 {
 	print_text(text, n_strings);
@@ -23,13 +22,23 @@ void print_and_sort(char** const text, const size_t n_strings, size_t* string_le
 
 	printf("sorted strings: \n");
 
-	sort_strings(text, n_strings, string_lengths);
+	sort_strings(text, n_strings, string_lengths, false);
 
 	print_text(text, n_strings);	
 
 	print_string_lenghts(string_lengths, n_strings);
 
 	printf("------------------\n");
+
+	printf("sorted strings reversed: \n");
+
+	sort_strings(text, n_strings, string_lengths, true);
+
+	print_text(text, n_strings);	
+
+	print_string_lenghts(string_lengths, n_strings);
+
+	printf("-_-_-_-_-_-_-_-_-_-\n");	
 
 	printf("returned back: \n");
 
@@ -39,6 +48,7 @@ void print_and_sort(char** const text, const size_t n_strings, size_t* string_le
 
 	print_string_lenghts(string_lengths, n_strings);
 }
+
 
 void print_string_lenghts(const size_t* const string_lengths, const size_t n_strings)
 {
