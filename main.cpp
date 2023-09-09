@@ -31,7 +31,7 @@ void link_text_and_buf(char** const text,  char* const buffer, const size_t buff
 }
 
 
-void free_all(char** text, char* buffer)
+void free_all(char** text, char* buffer, size_t* string_lengths)
 {
 	/* free buffer */
 	free(buffer);
@@ -44,6 +44,12 @@ void free_all(char** text, char* buffer)
 	printf("text is free\n");
 	text = 0;
 	/* free text*/
+
+	/* free string_lenghts */
+	free(string_lengths);
+	printf("string_lenghts is free\n");
+	string_lengths = 0;
+	/* free string_lenghts */
 }
 
 
@@ -117,6 +123,24 @@ void sort_strings(char** const text, size_t n_strings)
 }
 
 
+size_t* find_str_lens(const char* const * const text, size_t n_strings)
+{
+	size_t* string_lengths = (size_t*) calloc(n_strings, sizeof(size_t)); 
+
+	printf("calloc string_lengths\n");
+
+	for (size_t n_string = 0; n_string < n_strings; n_string++)
+	{
+		//string_lengths[n_string] = strlen(text[n_string]);
+		printf("find strlen %zu\n", n_string);
+	}
+
+	printf("prepare to return string_lengths\n");
+
+	return string_lengths;
+}
+
+
 int main()
 {
 	struct stat buffer_info;
@@ -139,16 +163,18 @@ int main()
 
 	printf("the number of strings is: %zu\n", n_strings);
 
-
-
-	printf("%zu", buffer_size);
-
 	char** text = (char**) calloc(n_strings, sizeof(char*));
+
+	printf("calloc text \n");
+
+	size_t* string_lengths = find_str_lens(text, n_strings);
+
+
 
 	link_text_and_buf(text, buffer, buffer_size);
 
 	print_and_sort(text, n_strings);
 
 
-	free_all(text, buffer);
+	free_all(text, buffer, string_lengths);
 }
