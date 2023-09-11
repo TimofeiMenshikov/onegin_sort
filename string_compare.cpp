@@ -23,6 +23,12 @@ bool is_letter(char symbol)
 }
 
 
+char* offset_str_to_letter(char* str)
+{
+	for(; !is_letter(str1[char_number1]); char_number1++);	
+}
+
+
 enum comp_two_str compare_two_strings(const char* const str1, const char* const str2)
 {
 	size_t char_number1 = 0;
@@ -32,7 +38,7 @@ enum comp_two_str compare_two_strings(const char* const str1, const char* const 
 	while (true)
 	{
 		for(; !is_letter(str1[char_number1]); char_number1++);
-		for(; !is_letter(str2[char_number2]); char_number2++);
+		for(; !is_letter(str2[char_number2]); char_number2++); //todo func
 
 		if (str1[char_number1] == '\0' && str2[char_number2] == '\0')
 		{
@@ -58,6 +64,7 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 {
 	ssize_t char_number1 = strlen1 - 1;
 	ssize_t char_number2 = strlen2 - 1;
+
 
 	while (true)
 	{

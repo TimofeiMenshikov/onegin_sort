@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 enum comp_two_str
 {
@@ -14,6 +15,7 @@ static void print_reversed_str(const char* const str, const size_t str_length)
 		putchar(str[char_number]);
 	}
 }
+
 
 static bool is_letter(char symbol)
 {
@@ -34,6 +36,7 @@ static bool is_letter(char symbol)
 
 	return false;
 }
+
 
 static enum comp_two_str compare_two_strings(const char* const str1, const char* const str2)
 {
@@ -65,7 +68,6 @@ static enum comp_two_str compare_two_strings(const char* const str1, const char*
 		char_number2++;			
 	}
 }
-
 
 // создать буфер размером максимальной строки, фильтровать туда строки убирая пробелы и другие символы
 
@@ -112,7 +114,6 @@ static enum comp_two_str compare_two_strings_reversed(const char* const str1, co
 			}
 		}
 
-
 		printf("char_number1 is %zu char_number2 is %zu\n", char_number1, char_number2);
 
 		if (str1[char_number1] < str2[char_number2])
@@ -130,16 +131,22 @@ static enum comp_two_str compare_two_strings_reversed(const char* const str1, co
 		char_number1--;
 		char_number2--;
 	}
-
-
-
-
 }
 
 
 int main()
 {
-	enum comp_two_str compare = compare_two_strings_reversed("b..bcd", "abcd", 5, 4);
+	char* str = (char*) calloc(10, sizeof(char));
+
+	for (size_t i = 0; i < 10; i++)
+	{
+		str[i] = i + 90;
+	}
+
+	str++;
+	str++;
+
+	printf("%s", str);
 
 	/*if (compare == FIRST_IS_RIGHT)
 	{

@@ -16,18 +16,18 @@ void link_text_and_buf(char** const text,  char* const buffer, const size_t buff
 
 	for (size_t char_number = 0; char_number < buffer_size - 1; char_number++) // buffer_size - 1, чтобы не считывало последний \0
 	{
-		printf("pos %zu: %c(%d)\n", char_number, buffer[char_number], buffer[char_number]);
+		//printf("pos %zu: %c(%d)\n", char_number, buffer[char_number], buffer[char_number]);
 		if (buffer[char_number] == '\0')
 		{
 			text[text_pos] = buffer + char_number + 1; // находим конец строки и присваеваем адрес следующего элемента элементу массива 
-			printf("added link number %zu: read element %c(%d) next element %c(%d)\n", text_pos, buffer[char_number], buffer[char_number], buffer[char_number + 1], buffer[char_number + 1]);
+			//printf("added link number %zu: read element %c(%d) next element %c(%d)\n", text_pos, buffer[char_number], buffer[char_number], buffer[char_number + 1], buffer[char_number + 1]);
 			text_pos++;
 		}
 	}
 
 	for (size_t i = 0; i < text_pos; i++)
 	{
-		printf("addres number %zu is %p\n", i, text[i]);
+		//printf("addres number %zu is %p\n", i, text[i]);
 	}
 }
 
@@ -63,7 +63,7 @@ size_t* find_str_lens(const char* const * const text, size_t n_strings)
 	for (size_t n_string = 0; n_string < n_strings; n_string++)
 	{
 		string_lengths[n_string] = strlen(text[n_string]);
-		printf("find strlen %zu\n", n_string);
+		//printf("find strlen %zu\n", n_string);
 	}
 
 	printf("prepare to return string_lengths\n");
@@ -94,7 +94,9 @@ int main()
 
 	stat("onegin.txt", &buffer_info);
 
-	FILE *inputfile = fopen("onegin.txt", "r");
+	FILE* inputfile = fopen("onegin.txt", "rb");
+
+	FILE* outputfile = fopen("output.txt", "w");
 
 	assert(inputfile);
 
@@ -123,7 +125,10 @@ int main()
 
 	printf("the biggest len of string is %zu\n", maxlen);
 
-	print_and_sort(text, n_strings, string_lengths);
+	print_and_sort(text, n_strings, string_lengths, outputfile);
+
+	fclose(inputfile);
+	fclose(outputfile);
 
 
 
