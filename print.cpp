@@ -24,7 +24,9 @@ void print_and_sort(char** const text, const size_t n_strings, size_t* string_le
 
 	printf("sorted strings: \n");
 
-	sort_strings(text, n_strings, string_lengths, false);
+	//sort_strings(text, n_strings, string_lengths, false);
+
+	my_qsort(text, 0, n_strings - 1);
 
 	fclose(outputfile);
 
@@ -38,7 +40,9 @@ void print_and_sort(char** const text, const size_t n_strings, size_t* string_le
 
 	printf("sorted strings reversed: \n");
 
-	sort_strings(text, n_strings, string_lengths, true);
+	//sort_strings(text, n_strings, string_lengths, true);
+
+	//my_qsort_reversed(text, 0, n_strings - 1, string_lengths);
 
 	fclose(outputfile);
 

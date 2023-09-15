@@ -134,20 +134,48 @@ static enum comp_two_str compare_two_strings_reversed(const char* const str1, co
 }
 
 
+static void my_qsort(char **arr, ssize_t first, ssize_t last)
+{
+    if (first < last)
+    {
+        ssize_t left = first;
+        ssize_t right = last;
+        char* middle = arr[(first + last) / 2];
+
+        do
+        {
+            while (compare_two_strings(arr[left], middle) == FIRST_IS_LEFT)
+            {
+            	//print_state(arr, last + 1, left, right, middle);
+            	left++;		
+            } 
+
+            while (compare_two_strings(arr[right] > middle) == FIRST_IS_RIGHT)
+            {
+            	//print_state(arr, last + 1, left, right, middle);
+            	right--;
+            }
+            
+            if (left <= right)
+            {
+            	swap_strings(arr + right, arr + left);
+
+                left++;
+                right--;
+            }
+
+        } while (left <= right);
+
+        my_qsort(arr, first, right);
+        my_qsort(arr, left, last);
+    }
+}
+
+
 int main()
 {
-	char* str = (char*) calloc(10, sizeof(char));
 
-	for (size_t i = 0; i < 10; i++)
-	{
-		str[i] = i + 90;
-	}
-
-	str++;
-	str++;
-
-	printf("%s", str);
-
+	
 	/*if (compare == FIRST_IS_RIGHT)
 	{
 		printf("FIRST_IS_RIGHT");

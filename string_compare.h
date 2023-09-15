@@ -4,6 +4,7 @@
 enum comp_two_str
 {
 	FIRST_IS_LEFT = 1,
+	IS_EQUAL = 0,
 	FIRST_IS_RIGHT = -1
 };
 
