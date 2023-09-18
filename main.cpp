@@ -32,7 +32,7 @@ void link_text_and_buf(char** const text,  char* const buffer, const size_t buff
 }
 
 
-void free_all(char** text, char* buffer, size_t* string_lengths)
+void free_all(char** text, char* buffer, ssize_t* string_lengths)
 {
 	/* free buffer */
 	free(buffer);
@@ -54,9 +54,9 @@ void free_all(char** text, char* buffer, size_t* string_lengths)
 }
 
 
-size_t* find_str_lens(const char* const * const text, size_t n_strings)
+ssize_t* find_str_lens(const char* const * const text, size_t n_strings)
 {
-	size_t* string_lengths = (size_t*) calloc(n_strings, sizeof(size_t)); 
+	ssize_t* string_lengths = (ssize_t*) calloc(n_strings, sizeof(ssize_t)); 
 
 	printf("calloc string_lengths\n");
 
@@ -72,7 +72,7 @@ size_t* find_str_lens(const char* const * const text, size_t n_strings)
 }
 
 
-size_t find_max_str(size_t* string_lengths, size_t n_strings)
+size_t find_max_str(ssize_t* string_lengths, size_t n_strings)
 {
 	size_t maxlen = 0;
 
@@ -92,13 +92,17 @@ int main()
 {
 	struct stat buffer_info;
 
-	stat("onegin.txt", &buffer_info);
+	char inputfile_name[] = "txt/input/onegin.txt";
 
-	FILE* inputfile = fopen("onegin.txt", "rb");
+	stat(inputfile_name, &buffer_info);
 
-	FILE* outputfile = fopen("output.txt", "w");
+	FILE* inputfile = fopen(inputfile_name, "rb");
+
+	printf("%p", inputfile);
+
 
 	assert(inputfile);
+
 
 	char* buffer = (char*) calloc(buffer_info.st_size / sizeof(char) + 1, sizeof(char));
 
@@ -119,16 +123,16 @@ int main()
 	link_text_and_buf(text, buffer, buffer_size);
 
 
-	size_t* string_lengths = find_str_lens(text, n_strings); // запуск строго после find_n_strings, так как использует \0 при расчете длин строк
+	ssize_t* string_lengths = find_str_lens(text, n_strings); // запуск строго после find_n_strings, так как использует \0 при расчете длин строк
 
 	size_t maxlen = find_max_str(string_lengths, n_strings);
 
 	printf("the biggest len of string is %zu\n", maxlen);
 
-	print_and_sort(text, n_strings, string_lengths, outputfile);
+	print_and_sort(text, n_strings, string_lengths);
 
 	fclose(inputfile);
-	fclose(outputfile);
+
 
 
 

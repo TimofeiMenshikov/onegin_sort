@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <assert.h>
 #include "sort.h"
 #include "print.h"
 
@@ -7,15 +8,23 @@ void print_text(const char* const * const text, const size_t n_strings, FILE* ou
 {
 	for (size_t n_string = 0; n_string < n_strings; n_string++)
 	{
+
 		//printf("string number %zu: <%s>\n", n_string, text[n_string]);
 		fputs(text[n_string], outputfile);
+		printf("%s", text[n_string]);
 		fputs("\n", outputfile);
+		putchar('\n');
 	}
 }
 
 
-void print_and_sort(char** const text, const size_t n_strings, size_t* string_lengths, FILE* outputfile)
+void print_and_sort(char** const text, const size_t n_strings, ssize_t* string_lengths)
 {
+
+	FILE* outputfile = fopen("txt/output/output.txt", "w");
+
+	assert(outputfile);
+
 	print_text(text, n_strings, outputfile);
 
 	print_string_lenghts(string_lengths, n_strings);
@@ -30,7 +39,7 @@ void print_and_sort(char** const text, const size_t n_strings, size_t* string_le
 
 	fclose(outputfile);
 
-	outputfile = fopen("output_sorted.txt", "w");
+	outputfile = fopen("txt/output/output_sorted.txt", "w");
 
 	print_text(text, n_strings, outputfile);	
 
@@ -42,11 +51,13 @@ void print_and_sort(char** const text, const size_t n_strings, size_t* string_le
 
 	//sort_strings(text, n_strings, string_lengths, true);
 
-	//my_qsort_reversed(text, 0, n_strings - 1, string_lengths);
+
 
 	fclose(outputfile);
 
-	outputfile = fopen("output_sorted_reversed.txt", "w");
+	outputfile = fopen("txt/output/output_sorted_reversed.txt", "w");
+
+	my_qsort_reversed(text, 0, n_strings - 1, string_lengths);
 
 	print_text(text, n_strings, outputfile);	
 
@@ -60,15 +71,17 @@ void print_and_sort(char** const text, const size_t n_strings, size_t* string_le
 
 	fclose(outputfile);
 
-	outputfile = fopen("output_returned.txt", "w");
+	outputfile = fopen("txt/output/output_returned.txt", "w");
 
 	print_text(text, n_strings, outputfile);
 
 	print_string_lenghts(string_lengths, n_strings);
+
+	fclose(outputfile);
 }
 
 
-void print_string_lenghts(const size_t* const string_lengths, const size_t n_strings)
+void print_string_lenghts(const ssize_t* const string_lengths, const size_t n_strings)
 {
 	for (size_t n_string = 0; n_string < n_strings; n_string++)
 	{
