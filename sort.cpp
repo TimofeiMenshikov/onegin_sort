@@ -59,61 +59,6 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last, enum comp_two
 }
 
 
-
-/*void my_qsort_reversed(char** arr, const ssize_t first, const ssize_t last, ssize_t* string_lengths)
-{
-    if (first < last)
-    {
-        ssize_t left = first;
-        ssize_t right = last;
-        char* middle = arr[(first + last) / 2];
-        ssize_t middle_len = string_lengths[(first + last) / 2];
-        printf("first is %zd last is %zd\n", first, last);
-
-        do
-        {
-            while (compare_two_strings_reversed(arr[left], middle, string_lengths[left], middle_len) == FIRST_IS_RIGHT)
-            {
-                //print_state(arr, last - first + 1, left, right);
-                //printf("left : %zd  right : %zd \n", left, right);
-                left++;     
-                
-                if (left > last)
-                {
-                    break;
-                }
-            } 
-
-            //printf("before while 2\n");
-            //printf("left : %zd  right : %zd \n", left, right);
-            while (compare_two_strings_reversed(middle, arr[right], middle_len, string_lengths[right]) == FIRST_IS_RIGHT)
-            {
-                //print_state(arr, last - first + 1, left, right);
-                right--;
-                if (right < first)
-                {
-                    break;
-                }
-            }
-            
-            if (left <= right)
-            {
-                swap_strings(arr + right, arr + left);
-                //print_state(arr, last - first + 1, left, right);
-                left++;
-                right--;
-            }
-
-        } while (left <= right);
-
-        my_qsort_reversed(arr, first, right, string_lengths);
-        my_qsort_reversed(arr, left, last, string_lengths);
-    }
-
-    return;
-}*/
-
-
 void swap_strings(char** const pos_1_ptr, char** const pos_2_ptr)
 {
 	char* temp = *pos_1_ptr;
