@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "include/string_compare.h"
+#include "include/printf_debug.h"
 
 static ssize_t offset_str_to_letter(const char* const str, ssize_t char_number);
 
@@ -70,31 +71,31 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 	ssize_t char_number2 = strlen2 - 1;
 
 
-	// printf("string 1: <%s>\n", str1);
-	// printf("string 2: <%s>\n", str2);
-	// printf("strlen1 is %zd\n", strlen1);
-	// printf("strlen2 is %zd\n", strlen2);
+	STRCMP_DUMP(printf("string 1: <%s>\n", str1));
+	STRCMP_DUMP(printf("string 2: <%s>\n", str2));
+	STRCMP_DUMP(printf("strlen1 is %zd\n", strlen1));
+	STRCMP_DUMP(printf("strlen2 is %zd\n", strlen2));
 
 	while (true)
 	{
-		// printf("char_number1 is %zd\n", char_number1);
-		// printf("char_number2 is %zd\n", char_number2);
+		STRCMP_DUMP(printf("char_number1 is %zd\n", char_number1));
+		STRCMP_DUMP(printf("char_number2 is %zd\n", char_number2));
 
 		if ((char_number1 < 0) && (char_number2 < 0))
 		{
-			// printf("IS EQUAL, because there is no more letters in str1 and str2\n");
+			STRCMP_DUMP(printf("IS EQUAL, because there is no more letters in str1 and str2\n"));
 			return IS_EQUAL;
 		}
 
 
 		if (char_number1 < 0)
 		{
-			// printf("FIRST_IS_LEFT, because there is no more letters in str1\n");
+			STRCMP_DUMP( printf("FIRST_IS_LEFT, because there is no more letters in str1\n"));
 			return FIRST_IS_LEFT;
 		}
 		if (char_number2 < 0)
 		{
-			// printf("FIRST_IS_RIGHT, because there is no more letters in str2\n");
+			STRCMP_DUMP( printf("FIRST_IS_RIGHT, because there is no more letters in str2\n"));
 			return FIRST_IS_RIGHT;
 		}
 
@@ -103,7 +104,7 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 			char_number1--;
 			if (char_number1 < 0)
 			{
-				// printf("FIRST_IS_LEFT, because there is no more letters in str1\n");
+				STRCMP_DUMP(printf("FIRST_IS_LEFT, because there is no more letters in str1\n"));
 				return FIRST_IS_LEFT;
 			}
 		}
@@ -115,25 +116,25 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 			char_number2--;
 			if (char_number2 < 0)
 			{
-				// printf("FIRST_IS_RIGHT, because there is no more letters in str2\n");
+				STRCMP_DUMP(printf("FIRST_IS_RIGHT, because there is no more letters in str2\n"));
 				return FIRST_IS_RIGHT;
 			}
 		}
 
-		//printf("while 2 passed\n");
+		// STRCMP_DUMP(printf("while 2 passed\n"));
 
 
-		// printf("char_number1 is %zd char_number2 is %zd\n", char_number1, char_number2);
+		STRCMP_DUMP( printf("char_number1 is %zd char_number2 is %zd\n", char_number1, char_number2));
 
 		if (str1[char_number1] < str2[char_number2])
 		{
-			// printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_LEFT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
+			STRCMP_DUMP(printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_LEFT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]));
 			return FIRST_IS_LEFT;
 		}
 
 		if (str1[char_number1] > str2[char_number2])
 		{
-			// printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_RIGHT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
+			STRCMP_DUMP(printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_RIGHT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]));
 			return FIRST_IS_RIGHT;
 		}
 

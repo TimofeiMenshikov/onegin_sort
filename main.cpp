@@ -54,16 +54,17 @@ void free_all(char** text, char* buffer, ssize_t* string_lengths)
 }
 
 
-ssize_t* find_str_lens(const char* const * const text, size_t n_strings)
+ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 {
 	ssize_t* string_lengths = (ssize_t*) calloc(n_strings, sizeof(ssize_t)); 
 
 	printf("calloc string_lengths\n");
 
-	for (size_t n_string = 0; n_string < n_strings; n_string++)
+	for (ssize_t n_string = 0; n_string < n_strings; n_string++)
 	{
+		printf("bebra\n");
 		string_lengths[n_string] = strlen(text[n_string]);
-		//printf("find strlen %zu\n", n_string);
+		printf("find strlen %zu\n", n_string);
 	}
 
 	printf("prepare to return string_lengths\n");
@@ -86,7 +87,9 @@ int main()
 
 	char* buffer = (char*) calloc(buffer_info.st_size / sizeof(char) + 1, sizeof(char));
 
-	size_t buffer_size = fread(buffer, sizeof(char), buffer_info.st_size, inputfile);
+	size_t buffer_size = fread(buffer, sizeof(char), buffer_info.st_size, inputfile) + 1;
+
+	buffer[buffer_size - 1] = '\0';
 
 	fclose(inputfile);
 

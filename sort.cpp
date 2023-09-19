@@ -3,6 +3,7 @@
 #include "include/string_compare.h"
 #include "include/string_compare.h"
 #include "include/print.h"
+#include "include/printf_debug.h"
 
 
 
@@ -15,9 +16,9 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last, enum comp_two
         ssize_t right = last;
         char* middle = arr[(first + last) / 2];
         ssize_t middle_len = string_lengths[(first + last) / 2];
-        //print_state(arr, last - first + 1, left, right);
+        SORT_DUMP(print_state(arr, last - first + 1, left, right));
 
-        //printf("middle is <%s>\n", middle);
+        SORT_DUMP(printf("middle is <%s>\n", middle));
 
         enum comp_two_str cmp = INVALID_NUMBER;
 
@@ -26,14 +27,14 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last, enum comp_two
             while (comparator(arr[left], middle, string_lengths[left], middle_len) == FIRST_IS_LEFT)
             {
             	left++;	
-                //print_state(arr, last - first + 1, left, right);	
+                SORT_DUMP(print_state(arr, last - first + 1, left, right));	
             }
 
 
             while (comparator(arr[right], middle, string_lengths[right], middle_len) == FIRST_IS_RIGHT)
             {
             	right--;
-                //print_state(arr, last - first + 1, left, right);
+                SORT_DUMP(print_state(arr, last - first + 1, left, right));
             }
 
             
@@ -45,7 +46,7 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last, enum comp_two
                 left++;
                 right--;
 
-                // print_state(arr, last - first + 1, left, right);
+                SORT_DUMP( print_state(arr, last - first + 1, left, right));
             }
 
 
