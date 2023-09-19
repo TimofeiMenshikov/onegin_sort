@@ -167,65 +167,6 @@ void my_qsort_reversed(char** arr, const ssize_t first, const ssize_t last, ssiz
 }
 
 
-
-// сортировка по символам с конца храним значения длин строк и при перестановке строк переставляем и их
-
-void sort_ptrs(char** const text, size_t n_strings, ssize_t* string_lengths)
-{
-	for (size_t i = 0; i < n_strings; i++)
-	{
-		for (size_t j = i + 1; j < n_strings; j++)
-		{
-			if (text[i] > text[j])
-			{
-				swap_strings(text + i, text + j);
-				swap_str_lens(string_lengths + i, string_lengths + j);
-			}
-		}
-	}
-}
-
-
-void qsort_ptrs(char** const text, ssize_t first, ssize_t last, ssize_t* string_lengths)
-{
-    if (first < last)
-    {
-        ssize_t left = first;
-        ssize_t right = last;
-        char* middle = text[(first + last) / 2];
-
-        do
-        {
-            while (text[left] < middle)
-            {
-                left++;     
-            } 
-
-            while (text[right] > middle)
-            {
-                right--;
-            }
-            
-            if (left <= right)
-            {
-                swap_strings(text + left, text + right);
-                swap_str_lens(string_lengths + left, string_lengths + right);
-
-                left++;
-                right--;
-            }
-
-        } while (left <= right);
-
-        qsort_ptrs(text, first, right, string_lengths);
-        qsort_ptrs(text, left, last, string_lengths);
-    }
-}
-
-
-
-
-
 void swap_strings(char** const pos_1_ptr, char** const pos_2_ptr)
 {
 	char* temp = *pos_1_ptr;
