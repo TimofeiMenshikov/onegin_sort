@@ -53,6 +53,22 @@ void free_all(char** text, char* buffer, ssize_t* string_lengths)
 	/* free string_lenghts */
 }
 
+ssize_t my_strlen(const char* const str)
+{
+	if (str[0] == '\0')
+	{
+		return 0;
+	}
+
+	ssize_t char_number = 0;
+	printf("string to find is %s\n", str);
+	while(str[char_number] != '\0')
+	{
+		char_number++;
+	}
+	return char_number;
+}
+
 
 ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 {
@@ -60,11 +76,11 @@ ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 
 	printf("calloc string_lengths\n");
 
+
 	for (ssize_t n_string = 0; n_string < n_strings; n_string++)
 	{
-		printf("bebra\n");
-		string_lengths[n_string] = strlen(text[n_string]);
-		printf("find strlen %zu\n", n_string);
+		string_lengths[n_string] = my_strlen(text[n_string]);
+		printf("find strlen %zu/%zu string is %s\n", n_string, n_strings - 1, text[n_string]);
 	}
 
 	printf("prepare to return string_lengths\n");
@@ -89,11 +105,18 @@ int main()
 
 	size_t buffer_size = fread(buffer, sizeof(char), buffer_info.st_size, inputfile) + 1;
 
+
+	//buffer_size = find_real_buf_size(buffer, buffer_size);
+
 	buffer[buffer_size - 1] = '\0';
+
+	//print_buffer(buffer, buffer_size);
 
 	fclose(inputfile);
 
-	size_t n_strings = find_n_strings(buffer, buffer_info.st_size);
+	size_t n_strings = find_n_strings(buffer, buffer_size);
+
+	nulled_buffer(buffer, buffer_size);
 
 	printf("the number of strings is: %zu\n", n_strings);
 

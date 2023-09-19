@@ -5,7 +5,7 @@ OBJDIR = object_files
 OBJECTS = $(OBJDIR)/main.o $(OBJDIR)/string_func.o $(OBJDIR)/string_compare.o $(OBJDIR)/sort.o $(OBJDIR)/print.o
 
 STRCMP_DEBUG = False
-SORT_DEBUG = True
+SORT_DEBUG = False
 
 ifeq ($(STRCMP_DEBUG), True)   
 	CXXFLAGS += -DSTRCMP_DEBUG

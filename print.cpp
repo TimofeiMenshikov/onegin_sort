@@ -136,3 +136,12 @@ void print_state( char** arr, const ssize_t size, const ssize_t left, const ssiz
     }
     putchar('\n');
 }
+
+
+void print_buffer(char* const buffer, const size_t buffer_size)
+{
+	for (size_t char_number = 0; char_number < buffer_size; char_number++)
+	{
+		printf("char number %zu: %c(%d)\n", char_number, buffer[char_number], buffer[char_number]);
+	}
+}

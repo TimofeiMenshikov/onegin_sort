@@ -9,4 +9,7 @@ void print_reversed_str(const char* const str, const size_t str_length);
 
 void print_state( char** arr, const ssize_t size, const ssize_t left, const ssize_t right);
 
+
+void print_buffer(char* const buffer, const size_t buffer_size);
+
 #endif /* PRINT_H */
