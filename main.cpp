@@ -2,10 +2,10 @@
 #include <sys/stat.h>
 #include <malloc.h>
 #include <assert.h>
-#include "string_func.h"
-#include "string_compare.h"
-#include "sort.h"
-#include "print.h"
+#include "include/string_func.h"
+#include "include/string_compare.h"
+#include "include/sort.h"
+#include "include/print.h"
 
 
 void link_text_and_buf(char** const text,  char* const buffer, const size_t buffer_size)

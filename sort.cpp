@@ -1,7 +1,7 @@
 #include <stdio.h>
-#include "sort.h"
-#include "string_compare.h"
-#include "string_compare.h"
+#include "include/sort.h"
+#include "include/string_compare.h"
+#include "include/string_compare.h"
 
 
 void print_state( char** arr, const ssize_t size, const ssize_t left, const ssize_t right)

@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "string_compare.h"
+#include "include/string_compare.h"
 
 
 // в функцию сравнения 2 строк нужно добаить вариант, когда строки равны, потому что в qsort элемент, равный разделяющему нужно менять всегда

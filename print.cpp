@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <assert.h>
-#include "sort.h"
-#include "print.h"
+#include "include/sort.h"
+#include "include/print.h"
 
 
 void print_text(const char* const * const text, const size_t n_strings, FILE* outputfile)

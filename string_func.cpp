@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <sys/stat.h>
 #include <malloc.h>
-#include "string_func.h"
+#include "include/string_func.h"
 
 size_t find_real_buf_size(char*  buffer, size_t buffer_size) // отбрасывает все \0 справа, кроме одного если \0 нет, то ставит \0 как дополнительный символ
 {
