@@ -215,8 +215,8 @@ void qsort_ptrs(char** const text, ssize_t first, ssize_t last, ssize_t* string_
 
         } while (left <= right);
 
-        my_qsort(text, first, right);
-        my_qsort(text, left, last);
+        my_qsort(text, first, left);
+        my_qsort(text, right, last);
     }
 }
 

@@ -96,21 +96,18 @@ int main()
 
 	stat(inputfile_name, &buffer_info);
 
-	FILE* inputfile = fopen(inputfile_name, "rb");
-
-	printf("%p", inputfile);
-
+	FILE* inputfile = fopen(inputfile_name, "r");
 
 	assert(inputfile);
 
 
 	char* buffer = (char*) calloc(buffer_info.st_size / sizeof(char) + 1, sizeof(char));
 
-	fread(buffer, sizeof(char), buffer_info.st_size, inputfile);
+	size_t buffer_size = fread(buffer, sizeof(char), buffer_info.st_size, inputfile);
 
-	size_t buffer_size = buffer_info.st_size / sizeof(char) + 1;
+	//size_t buffer_size = buffer_info.st_size / sizeof(char) + 1;
 
-	buffer_size = find_real_buf_size(buffer, buffer_size); // запуск строго до find_n_strings, так как просчет количества символов до \0, а find_n_string меняет \n на \0
+	//buffer_size = find_real_buf_size(buffer, buffer_size); // запуск строго до find_n_strings, так как просчет количества символов до \0, а find_n_string меняет \n на \0
 
 	size_t n_strings = find_n_strings(buffer, buffer_info.st_size);
 

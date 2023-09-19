@@ -85,6 +85,12 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 		//printf("char_number1 is %zd\n", char_number1);
 		//printf("char_number2 is %zd\n", char_number2);
 
+		if ((char_number1 < 0) && (char_number2 < 0))
+		{
+			return IS_EQUAL;
+		}
+
+
 		if (char_number1 < 0)
 		{
 			//printf("FIRST_IS_RIGHT, because there is no more letters in str1\n");
