@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include "include/string_compare.h"
 
-
-// в функцию сравнения 2 строк нужно добаить вариант, когда строки равны, потому что в qsort элемент, равный разделяющему нужно менять всегда
-
+static ssize_t offset_str_to_letter(const char* const str, ssize_t char_number);
 
 bool is_letter(char symbol)
 {
@@ -26,27 +24,24 @@ bool is_letter(char symbol)
 }
 
 
-size_t offset_str_to_letter(const char* const str, size_t char_number)
+static ssize_t offset_str_to_letter(const char* const str, ssize_t char_number)
 {
 	for(; !is_letter(str[char_number]); char_number++);	
 	return char_number;
 }
 
 
-enum comp_two_str compare_two_strings(const char* const str1, const char* const str2)
+enum comp_two_str compare_two_strings(const char* const str1, const char* const str2, const ssize_t strlen1, const ssize_t strlen2)
 {
-	size_t char_number1 = 0;
+	ssize_t char_number1 = 0;
 
-	size_t char_number2 = 0;
+	ssize_t char_number2 = 0;
 
 	while (true)
 	{
 
 		char_number1 = offset_str_to_letter(str1, char_number1);
 		char_number2 = offset_str_to_letter(str2, char_number2);
-
-		for(; !is_letter(str1[char_number1]); char_number1++);
-		for(; !is_letter(str2[char_number2]); char_number2++); //todo func
 
 		if (str1[char_number1] == '\0' && str2[char_number2] == '\0')
 		{
@@ -75,31 +70,32 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 	ssize_t char_number2 = strlen2 - 1;
 
 
-	//printf("string 1: <%s>\n", str1);
-	//printf("string 2: <%s>\n", str2);
-	//printf("strlen1 is %zd\n", strlen1);
-	//printf("strlen2 is %zd\n", strlen2);
+	// printf("string 1: <%s>\n", str1);
+	// printf("string 2: <%s>\n", str2);
+	// printf("strlen1 is %zd\n", strlen1);
+	// printf("strlen2 is %zd\n", strlen2);
 
 	while (true)
 	{
-		//printf("char_number1 is %zd\n", char_number1);
-		//printf("char_number2 is %zd\n", char_number2);
+		// printf("char_number1 is %zd\n", char_number1);
+		// printf("char_number2 is %zd\n", char_number2);
 
 		if ((char_number1 < 0) && (char_number2 < 0))
 		{
+			// printf("IS EQUAL, because there is no more letters in str1 and str2\n");
 			return IS_EQUAL;
 		}
 
 
 		if (char_number1 < 0)
 		{
-			//printf("FIRST_IS_RIGHT, because there is no more letters in str1\n");
-			return FIRST_IS_RIGHT;
+			// printf("FIRST_IS_LEFT, because there is no more letters in str1\n");
+			return FIRST_IS_LEFT;
 		}
 		if (char_number2 < 0)
 		{
-			//printf("FIRST_IS_LEFT, because there is no more letters in str2\n");
-			return FIRST_IS_LEFT;
+			// printf("FIRST_IS_RIGHT, because there is no more letters in str2\n");
+			return FIRST_IS_RIGHT;
 		}
 
 		while (!is_letter(str1[char_number1]))
@@ -107,33 +103,37 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 			char_number1--;
 			if (char_number1 < 0)
 			{
-				//printf("FIRST_IS_RIGHT, because there is no more letters in str1\n");
-				return FIRST_IS_RIGHT;
+				// printf("FIRST_IS_LEFT, because there is no more letters in str1\n");
+				return FIRST_IS_LEFT;
 			}
 		}
+
+		//printf("while 1 passed\n");
 
 		while (!is_letter(str2[char_number2]))
 		{
 			char_number2--;
 			if (char_number2 < 0)
 			{
-				//printf("FIRST_IS_LEFT, because there is no more letters in str2");
-				return FIRST_IS_LEFT;
+				// printf("FIRST_IS_RIGHT, because there is no more letters in str2\n");
+				return FIRST_IS_RIGHT;
 			}
 		}
 
+		//printf("while 2 passed\n");
 
-		//printf("char_number1 is %zd char_number2 is %zd\n", char_number1, char_number2);
+
+		// printf("char_number1 is %zd char_number2 is %zd\n", char_number1, char_number2);
 
 		if (str1[char_number1] < str2[char_number2])
 		{
-			//printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_LEFT", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
+			// printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_LEFT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
 			return FIRST_IS_LEFT;
 		}
 
 		if (str1[char_number1] > str2[char_number2])
 		{
-			//printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_RIGHT", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
+			// printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_RIGHT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
 			return FIRST_IS_RIGHT;
 		}
 
@@ -143,7 +143,7 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 }
 
 
-enum comp_two_str compare_two_ptrs(const char* ptr1, const char* ptr2)
+enum comp_two_str compare_two_ptrs(const char* ptr1, const char* ptr2, const ssize_t strlen1, const ssize_t strlen2)
 {
 	if (ptr1 == ptr2)
 	{

@@ -7,4 +7,6 @@ void print_string_lenghts(const ssize_t* const string_lengths, const size_t n_st
 
 void print_reversed_str(const char* const str, const size_t str_length);
 
+void print_state( char** arr, const ssize_t size, const ssize_t left, const ssize_t right);
+
 #endif /* PRINT_H */

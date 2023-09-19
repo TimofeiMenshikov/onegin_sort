@@ -20,7 +20,6 @@ void print_text(const char* const * const text, const size_t n_strings, FILE* ou
 
 void print_and_sort(char** const text, const size_t n_strings, ssize_t* string_lengths)
 {
-
 	FILE* outputfile = fopen("txt/output/output.txt", "w");
 
 	assert(outputfile);
@@ -56,7 +55,7 @@ void print_and_sort(char** const text, const size_t n_strings, ssize_t* string_l
 
 	outputfile = fopen("txt/output/output_sorted_reversed.txt", "w");
 
-	my_qsort_reversed(text, 0, n_strings - 1, string_lengths);
+	my_qsort(text, 0, n_strings - 1, compare_two_strings_reversed, string_lengths);
 
 	print_text(text, n_strings, outputfile);	
 
@@ -89,6 +88,7 @@ void print_string_lenghts(const ssize_t* const string_lengths, const size_t n_st
 	}
 }
 
+
 void print_reversed_str(const char* const str, const size_t str_length)
 {
 	for (ssize_t char_number = str_length - 1; char_number >= 0; char_number--)
@@ -97,3 +97,42 @@ void print_reversed_str(const char* const str, const size_t str_length)
 	}
 }
 
+
+void print_state( char** arr, const ssize_t size, const ssize_t left, const ssize_t right)
+{
+    for (ssize_t number = 0; number < size; number++)
+    {
+        //printf("number is %zd\n", number);
+        //printf("%zd", number);
+
+
+        if (number == left)
+        {
+            putchar('{');
+        }
+        else
+        {
+            putchar(' ');
+        }
+
+ 
+        putchar(' ');
+
+
+        printf("%s", arr[number]);
+
+
+        putchar(' ');
+
+        if (number == right)
+        {
+            putchar('}');
+        }
+        else
+        {
+            putchar(' ');
+        }
+
+    }
+    putchar('\n');
+}
