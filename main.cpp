@@ -100,14 +100,11 @@ int main()
 
 	assert(inputfile);
 
-
 	char* buffer = (char*) calloc(buffer_info.st_size / sizeof(char) + 1, sizeof(char));
 
 	size_t buffer_size = fread(buffer, sizeof(char), buffer_info.st_size, inputfile);
 
-	//size_t buffer_size = buffer_info.st_size / sizeof(char) + 1;
-
-	//buffer_size = find_real_buf_size(buffer, buffer_size); // запуск строго до find_n_strings, так как просчет количества символов до \0, а find_n_string меняет \n на \0
+	fclose(inputfile);
 
 	size_t n_strings = find_n_strings(buffer, buffer_info.st_size);
 
@@ -119,19 +116,13 @@ int main()
 
 	link_text_and_buf(text, buffer, buffer_size);
 
-
 	ssize_t* string_lengths = find_str_lens(text, n_strings); // запуск строго после find_n_strings, так как использует \0 при расчете длин строк
 
-	size_t maxlen = find_max_str(string_lengths, n_strings);
+	//ssize_t maxlen = find_max_str(string_lengths, n_strings);
 
-	printf("the biggest len of string is %zu\n", maxlen);
+	//printf("the biggest len of string is %zu\n", maxlen);
 
 	print_and_sort(text, n_strings, string_lengths);
-
-	fclose(inputfile);
-
-
-
 
 	free_all(text, buffer, string_lengths);
 }

@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include "sort.h"
 #include "string_compare.h"
+#include "string_compare.h"
 
 
 void print_state( char** arr, const ssize_t size, const ssize_t left, const ssize_t right)
@@ -71,7 +72,7 @@ void sort_strings(char** const text, size_t n_strings, ssize_t* string_lengths, 
 
 
 
-void my_qsort(char **arr, const ssize_t first, const ssize_t last)
+void my_qsort(char **arr, const ssize_t first, const ssize_t last, enum comp_two_str (*comparator)(const char* const str1, const char* const str2), ssize_t* string_lengths)
 {
     if (first < last)
     {
@@ -81,13 +82,13 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last)
 
         do
         {
-            while (compare_two_strings(arr[left], middle) == FIRST_IS_LEFT)
+            while (comparator(arr[left], middle) == FIRST_IS_LEFT)
             {
 
             	left++;		
             } 
 
-            while (compare_two_strings(arr[right], middle) == FIRST_IS_RIGHT)
+            while (comparator(arr[right], middle) == FIRST_IS_RIGHT)
             {
             	right--;
             }
@@ -95,6 +96,7 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last)
             if (left <= right)
             {
             	swap_strings(arr + right, arr + left);
+                swap_str_lens(string_lengths + left, string_lengths + right);
 
                 left++;
                 right--;
@@ -102,8 +104,8 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last)
 
         } while (left <= right);
 
-        my_qsort(arr, first, right);
-        my_qsort(arr, left, last);
+        my_qsort(arr, first, right, comparator, string_lengths);
+        my_qsort(arr, left, last, comparator, string_lengths);
     }
 
     return;
@@ -157,8 +159,8 @@ void my_qsort_reversed(char** arr, const ssize_t first, const ssize_t last, ssiz
 
         } while (left <= right);
 
-        my_qsort(arr, first, right);
-        my_qsort(arr, left, last);
+        my_qsort_reversed(arr, first, right, string_lengths);
+        my_qsort_reversed(arr, left, last, string_lengths);
     }
 
     return;
@@ -215,8 +217,8 @@ void qsort_ptrs(char** const text, ssize_t first, ssize_t last, ssize_t* string_
 
         } while (left <= right);
 
-        my_qsort(text, first, left);
-        my_qsort(text, right, last);
+        qsort_ptrs(text, first, right, string_lengths);
+        qsort_ptrs(text, left, last, string_lengths);
     }
 }
 

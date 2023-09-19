@@ -11,9 +11,9 @@ void print_text(const char* const * const text, const size_t n_strings, FILE* ou
 
 		//printf("string number %zu: <%s>\n", n_string, text[n_string]);
 		fputs(text[n_string], outputfile);
-		printf("%s", text[n_string]);
+		//printf("%s", text[n_string]);
 		fputs("\n", outputfile);
-		putchar('\n');
+		//putchar('\n');
 	}
 }
 
@@ -35,7 +35,7 @@ void print_and_sort(char** const text, const size_t n_strings, ssize_t* string_l
 
 	//sort_strings(text, n_strings, string_lengths, false);
 
-	my_qsort(text, 0, n_strings - 1);
+	my_qsort(text, 0, n_strings - 1, compare_two_strings, string_lengths);
 
 	fclose(outputfile);
 
@@ -52,7 +52,6 @@ void print_and_sort(char** const text, const size_t n_strings, ssize_t* string_l
 	//sort_strings(text, n_strings, string_lengths, true);
 
 
-
 	fclose(outputfile);
 
 	outputfile = fopen("txt/output/output_sorted_reversed.txt", "w");
@@ -67,9 +66,8 @@ void print_and_sort(char** const text, const size_t n_strings, ssize_t* string_l
 
 	printf("returned back: \n");
 
-	//sort_ptrs(text, n_strings, string_lengths);
 
-	qsort_ptrs(text, 0, n_strings - 1, string_lengths);
+	my_qsort(text, 0, n_strings - 1, compare_two_ptrs, string_lengths);
 
 	fclose(outputfile);
 

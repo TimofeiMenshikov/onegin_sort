@@ -22,6 +22,7 @@ size_t find_real_buf_size(char*  buffer, size_t buffer_size) // отбрасыв
 	return buffer_size;
 }
 
+
 size_t find_n_strings( char* const buffer, const size_t buffer_size)  // find count of string and replace '\n' to '\0'
 {
 	size_t n_strings = 0;
