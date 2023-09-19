@@ -61,7 +61,7 @@ ssize_t my_strlen(const char* const str)
 	}
 
 	ssize_t char_number = 0;
-	printf("string to find is %s\n", str);
+	//printf("string to find is %s\n", str);
 	while(str[char_number] != '\0')
 	{
 		char_number++;
@@ -80,7 +80,7 @@ ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 	for (ssize_t n_string = 0; n_string < n_strings; n_string++)
 	{
 		string_lengths[n_string] = my_strlen(text[n_string]);
-		printf("find strlen %zu/%zu string is %s\n", n_string, n_strings - 1, text[n_string]);
+		//printf("find strlen %zu/%zu string is %s\n", n_string, n_strings - 1, text[n_string]);
 	}
 
 	printf("prepare to return string_lengths\n");

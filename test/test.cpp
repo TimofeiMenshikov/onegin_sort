@@ -1,11 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-
 enum comp_two_str
 {
 	FIRST_IS_LEFT = 1,
-	FIRST_IS_RIGHT = -1
+	IS_EQUAL = 0,
+	FIRST_IS_RIGHT = -1,
+	INVALID_NUMBER = 2
 };
+#include "../include/printf_debug.h"
 
 
 static void print_reversed_str(const char* const str, const size_t str_length)
@@ -73,25 +75,42 @@ static enum comp_two_str compare_two_strings(const char* const str1, const char*
 
 // задача о получении максимальной длины строки
 
-static enum comp_two_str compare_two_strings_reversed(const char* const str1, const char* const str2, const size_t strlen1, const size_t strlen2)
+enum comp_two_str compare_two_strings_reversed(const char* const str1, const char* const str2, const ssize_t strlen1, const ssize_t strlen2)
 {
 	ssize_t char_number1 = strlen1 - 1;
 	ssize_t char_number2 = strlen2 - 1;
 
+
+	STRCMP_DUMP(printf("string 1: <%s>\n", str1));
+	STRCMP_DUMP(printf("string 2: <%s>\n", str2));
+	STRCMP_DUMP(printf("strlen1 is %zd\n", strlen1));
+	STRCMP_DUMP(printf("strlen2 is %zd\n", strlen2));
+
+	bool return1 = false;
+	bool return2 = false;
+
 	while (true)
 	{
-		printf("char_number1 is %zu\n", char_number1);
-		printf("char_number2 is %zu\n", char_number2);
+		STRCMP_DUMP(printf("char_number1 is %zd, symbol is %c(%d)\n", char_number1, str1[char_number1], str2[char_number2]));
+		STRCMP_DUMP(printf("char_number2 is %zd, symbol is %c(%d)\n", char_number2, str2[char_number2], str2[char_number2]));
+
+		if ((char_number1 < 0) && (char_number2 < 0))
+		{
+			STRCMP_DUMP(printf("IS EQUAL, because there is no more letters in str1 and str2\n"));
+			return IS_EQUAL;
+		}
+
 
 		if (char_number1 < 0)
 		{
-			printf("FIRST_IS_RIGHT, because there is no more letters in str1");
-			return FIRST_IS_RIGHT;
+			STRCMP_DUMP( printf("FIRST_IS_LEFT, because there is no more letters in str1\n"));
+			return FIRST_IS_LEFT;
 		}
 		if (char_number2 < 0)
 		{
-			printf("FIRST_IS_LEFT, because there is no more letters in str2");
-			return FIRST_IS_LEFT;
+			STRCMP_DUMP( printf("FIRST_IS_RIGHT, because there is no more letters in str2\n"));
+
+			return FIRST_IS_RIGHT;
 		}
 
 		while (!is_letter(str1[char_number1]))
@@ -99,32 +118,58 @@ static enum comp_two_str compare_two_strings_reversed(const char* const str1, co
 			char_number1--;
 			if (char_number1 < 0)
 			{
-				printf("FIRST_IS_RIGHT, because there is no more letters in str1");
-				return FIRST_IS_RIGHT;
+
+				return1 = true;
+				break;
 			}
 		}
+
+		//printf("while 1 passed\n");
 
 		while (!is_letter(str2[char_number2]))
 		{
 			char_number2--;
 			if (char_number2 < 0)
 			{
-				printf("FIRST_IS_LEFT, because there is no more letters in str2");
-				return FIRST_IS_LEFT;
+
+				return2 = true;
+				break;
 			}
 		}
 
-		printf("char_number1 is %zu char_number2 is %zu\n", char_number1, char_number2);
+
+		if ((return1 == true) && (return2 == true))
+		{
+			STRCMP_DUMP(printf("IS EQUAL, because there is no more letters in str1 and str2\n"));
+			return IS_EQUAL;
+
+		}
+
+		if (return1 == true)
+		{
+			STRCMP_DUMP(printf("FIRST_IS_LEFT, because there is no more letters in str1\n"));
+			return FIRST_IS_LEFT;
+		}
+		if (return2 == true)
+		{
+			STRCMP_DUMP(printf("FIRST_IS_RIGHT, because there is no more letters in str2\n"));
+			return FIRST_IS_RIGHT;
+		}
+
+		// STRCMP_DUMP(printf("while 2 passed\n"));
+
+
+		STRCMP_DUMP( printf("char_number1 is %zd char_number2 is %zd\n", char_number1, char_number2));
 
 		if (str1[char_number1] < str2[char_number2])
 		{
-			printf("str[%zu] = %c(%d), str[%zu] = %c(%d), so FIRST_IS_LEFT", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
+			STRCMP_DUMP(printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_LEFT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]));
 			return FIRST_IS_LEFT;
 		}
 
 		if (str1[char_number1] > str2[char_number2])
 		{
-			printf("str[%zu] = %c(%d), str[%zu] = %c(%d), so FIRST_IS_RIGHT", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]);
+			STRCMP_DUMP(printf("str[%zd] = %c(%d), str[%zd] = %c(%d), so FIRST_IS_RIGHT\n", char_number1, str1[char_number1], str1[char_number1], char_number2, str2[char_number2], str2[char_number2]));
 			return FIRST_IS_RIGHT;
 		}
 
@@ -134,7 +179,7 @@ static enum comp_two_str compare_two_strings_reversed(const char* const str1, co
 }
 
 
-static void my_qsort(char **arr, ssize_t first, ssize_t last)
+/*static void my_qsort(char **arr, ssize_t first, ssize_t last)
 {
     if (first < last)
     {
@@ -169,12 +214,17 @@ static void my_qsort(char **arr, ssize_t first, ssize_t last)
         my_qsort(arr, first, right);
         my_qsort(arr, left, last);
     }
-}
+}*/
 
 
 int main()
 {
+	char str1[] = "\n";
+	char str2[] = "\n";
 
+	printf("%s", str1);
+
+	enum comp_two_str compare = compare_two_strings_reversed(str1, str2, 1, 1);
 	
 	/*if (compare == FIRST_IS_RIGHT)
 	{

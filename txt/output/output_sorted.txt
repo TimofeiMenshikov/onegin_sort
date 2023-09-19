@@ -178,6 +178,7 @@
 
 
 
+07`}
 
 
 
@@ -191,6 +192,8 @@ ACT IV
 ACT V
 A Norman.
 A Norman was't?
+^&A?2;R3
+AS+=FIVL
 A baseness to write fair and labour'd much
 A blanket, in the alarm of fear caught up;
 A bloody deed! almost as bad, good mother,
@@ -234,6 +237,7 @@ Ah, ha! Come, some music! come, the recorders!
 Ah, ha, boy! say'st thou so? art thou there,
 A hit, a very palpable hit.
 Ah, my good lord, what have I seen to-night!
+Aj''ya
 A kind of wick or snuff that will abate it;
 A king of shreds and patches,--
 Alack,
@@ -697,12 +701,12 @@ Ay, marry, is't; crowner's quest law.
 Ay, marry, why was he sent into England?
 Ay me, what act,
 Ay, my good lord.
-Ay, my lord;
+Ay, my lord.
+Ay, my lord.
+Ay, my lord.
+Ay, my lord.
 Ay, my lord,
-Ay, my lord.
-Ay, my lord.
-Ay, my lord.
-Ay, my lord.
+Ay, my lord;
 Ay, my lord.
 Ay, my lord, and of calf-skins too.
 Ay, my lord; they stay upon your patience.
@@ -1302,8 +1306,8 @@ Follow her close; give her good watch,
 Follow him at foot; tempt him with speed aboard;
 Follow him, friends: we'll hear a play to-morrow.
 Follow my mother.
-For England!
 For England.
+For England!
 For God's love, let me hear.
 For Hamlet and the trifling of his favour,
 For Hecuba!
@@ -1478,9 +1482,9 @@ Good gentlemen, give him a further edge,
 Good gentlemen, he hath much talk'd of you;
 Good madam!
 Good madam, stay awhile; I will be faithful.
+Good my lord!
+Good my lord!
 Good my lord,
-Good my lord!
-Good my lord!
 Good my lord, be quiet.
 Good my lord, put your discourse into some frame and
 Good my lord, tell it.
@@ -2178,6 +2182,7 @@ How weary, stale, flat and unprofitable,
 Hunts not the trail of policy so sure
 Hyperion's curls; the front of Jove himself;
 Hyperion to a satyr; so loving to my mother
+IOBS0l]8
 I alone became their prisoner. They have dealt with
 I am afeard you make a wanton of me.
 I am but mad north-north-west: when the wind is
@@ -2786,6 +2791,7 @@ LORD POLONIUS
 LORD POLONIUS
 LORD POLONIUS
 LORD POLONIUS
+LS?VgT
 LUCIANUS
 Lady, shall I lie in your lap?
 Laertes, I must commune with your grief,
@@ -2945,6 +2951,7 @@ May give his saying deed; which is no further
 May one be pardon'd and retain the offence?
 May sweep to my revenge.
 May violets spring! I tell thee, churlish priest,
+M(bp|k
 Meantime we thank you for your well-took labour:
 Meet what I would have well and it destroy!
 Messenger
@@ -2977,6 +2984,7 @@ Most thoroughly for my father.
 Most welcome home!
 Mother, good night. Indeed this counsellor
 Mother, you have my father much offended.
+M_srGY}
 Much heat and him. I'll sconce me even here.
 Murder!
 Murder most foul, as in the best it is;
@@ -3181,6 +3189,7 @@ Now see that noble and most sovereign reason,
 Now wears his crown.
 Now, what my love is, proof hath made you know;
 No; you'll reveal it.
+NpiG-]]0/|
 O Gertrude, come away!
 O God!
 O God, I could be bounded in a nut shell and count
@@ -3191,6 +3200,7 @@ O Hamlet, thou hast cleft my heart in twain.
 O Hamlet, what a falling-off was there!
 O, I die, Horatio;
 O Jephthah, judge of Israel, what a treasure hadst thou!
+=O0|O;ea}Gtv
 OPHELIA
 OPHELIA
 OPHELIA
@@ -3451,7 +3461,9 @@ O wonderful son, that can so astonish a mother! But
 O wretched state! O bosom black as death!
 O, yes, my lord; he wore his beaver up.
 O, yet defend me, friends; I am but hurt.
+*/'9PEB>cH7[\o%
 POLONIUS hides behind the arras
+1<PP|<g$j]a^Or
 PRINCE FORTINBRAS
 PRINCE FORTINBRAS
 PRINCE FORTINBRAS
@@ -3487,6 +3499,7 @@ Pointing to POLONIUS
 Popp'd in between the election and my hopes,
 Possess it merely. That it should come to this!
 Pours the poison into the sleeper's ears
+PqGYA[4\_
 Pray you, be round with him.
 Pray you, let's have no words of this; but when they
 Pray you, mark.
@@ -3573,6 +3586,8 @@ QUEEN GERTRUDE
 QUEEN GERTRUDE
 QUEEN GERTRUDE
 QUEEN GERTRUDE falls
+:QWay1
+2Qa4RW:D-
 Question it, Horatio.
 Quoth she, before you tumbled me,
 REYNALDO
@@ -3588,6 +3603,7 @@ REYNALDO
 REYNALDO
 REYNALDO
 REYNALDO
+R09^GOQ$z
 ROSENCRANTZ
 ROSENCRANTZ
 ROSENCRANTZ
@@ -3633,10 +3649,10 @@ ROSENCRANTZ
 ROSENCRANTZ
 ROSENCRANTZ
 ROSENCRANTZ
-ROSENCRANTZ GUILDENSTERN
-ROSENCRANTZ GUILDENSTERN
 ROSENCRANTZ GUILDENSTERN
 ROSENCRANTZ: GUILDENSTERN:
+ROSENCRANTZ GUILDENSTERN
+ROSENCRANTZ GUILDENSTERN
 Rankly abused: but know, thou noble youth,
 Rapier and dagger.
 Read on this book;
@@ -3764,18 +3780,18 @@ Since nature cannot choose his origin--
 Since nature makes them partial, should o'erhear
 Since yet thy cicatrice looks raw and red
 Singeing his pate against the burning zone,
-[Sings]
 Sings
 Sings
-[Sings]
 [Sings]
 [Sings]
 Sings
 Sings
 [Sings]
 Sings
-Sings
 [Sings]
+[Sings]
+[Sings]
+Sings
 [Sings]
 Sir?
 Sir, I cannot.
@@ -4334,6 +4350,7 @@ Thy loving father, Hamlet.
 Thy natural magic and dire property,
 Thyself do grace to them, and bring them in.
 Thy state is the more gracious; for 'tis a vice to
+T&5i]F9E
 Till I have caught her once more in mine arms:
 Till by some elder masters, of known honour,
 Till of this flat a mountain you have made,
@@ -4551,8 +4568,8 @@ Very like a whale.
 Very like, very like. Stay'd it long?
 Very strangely, they say.
 Very well. Follow that lord; and look you mock him
-Very well, my lord.
 Very well, my lord
+Very well, my lord.
 Videlicet, a brothel, or so forth.
 Virtue itself of vice must pardon beg,
 Virtue itself 'scapes not calumnious strokes:
@@ -4586,8 +4603,8 @@ Well, good night.
 We'll ha't to-morrow night. You could, for a need,
 We'll make a solemn wager on your cunnings: I ha't.
 Well may it sort that this portentous figure
-Well, my lord:
 Well, my lord.
+Well, my lord:
 We'll put on those shall praise your excellence
 We'll put the matter to the present push.
 Well ratified by law and heraldry,
@@ -4806,8 +4823,8 @@ Who shall stay you?
 Who's there?
 Who this had seen, with tongue in venom steep'd,
 Who was in life a foolish prating knave.
-Why,
 Why?
+Why,
 Why,
 Why I will fight with him upon this theme
 Why, any thing, but to the purpose. You were sent
@@ -5021,6 +5038,7 @@ Youth to itself rebels, though none else near.
 You told us of some suit; what is't, Laertes?
 You will do't, sir, really.
 You will lose this wager, my lord.
+Z'LX(3b
 abhorred in my imagination it is! my gorge rims at
 about my heart: but it is no matter.
 about to say? By the mass, I was about to say
@@ -5035,6 +5053,7 @@ afterwards, if they should grow themselves to common
 against six French swords, their assigns, and three
 against the Danish. Why is this 'imponed,' as you call it?
 a gentlewoman, she should have been buried out o'
+$%0aj*,r
 all; believe none of us. Go thy ways to a nunnery.
 altitude of a chopine. Pray God, your voice, like
 an ape, in the corner of his jaw; first mouthed, to
@@ -5053,7 +5072,7 @@ and wife is one flesh; and so, my mother. Come, for England!
 anon; 'tis a knavish piece of work: but what o'
 another: you jig, you amble, and you lisp, and
 apiece of uncurrent gold, be not cracked within the
-aptmfujbsoins
+arXllwhLvl{UN
 are as mad as he.
 are not mine.
 ashamed to show, he'll not shame to tell you what it means.
@@ -5079,18 +5098,15 @@ between earth and heaven? We are arrant knaves,
 between yourself and him, he shall not exceed you
 be your tutor: suit the action to the word, the
 blessing: but not as your daughter may conceive.
-bmknjdguokxx
 borne me on his back a thousand times; and now, how
 bound for England; if your name be Horatio, as I am
 breed. If it shall please you to make me a
 breeder of sinners? I am myself indifferent honest;
-bsedhfryjciige
-bughzfvdgb
 but be merry? for, look you, how cheerfully my
 but blow them to their trial, the bubbles are out.
 but to play at loggats with 'em? mine ache to think on't.
 but yet I could accuse me of such things that it
-byubkvbzpoeppz
+b&ynJ)gY1tS
 calendar of gentry, for you shall find in him the
 call them--that many wearing rapiers are afraid of
 cannot choose but weep, to think they should lay him
@@ -5124,46 +5140,36 @@ creatures else to fat us, and we fat ourselves for
 cried in the top of mine--an excellent play, well
 cuffs in the question.
 custom of exercises; and indeed it goes so heavily
-cwwzbxvl
-cysdjwvzu
-czbomumu
-czjyf
 daughter. Lord, we know what we are, but know not
 daughter: yet he knew me not at first; he said I
-dcucpjautcckdg
 deal justly with me: come, come; nay, speak.
-denoqi
 did; I am to do a good turn for them. Let the king
 died: they say he made a good end,--
 differences, of very soft society and great showing:
 digested in the scenes, set down with as much
 dizzy the arithmetic of memory, and yet but yaw
-dodsboop
 does well; but how does it well? it does well to
 doomsday. Go, get thee to Yaughan: fetch me a
 do, surely, bar the door upon your own liberty, if
-dozwkf
 drown or hang themselves, more than their even
 dumb; yet are they much too light for the bore of
+eO,g)Z>s
 earth, seems to me a sterile promontory, this most
 earth we make loam; and why of that loam, whereto he
 easier to be played on than a pipe? Call me what
-edfxijqzqqat
-edjghtvh
+ed4q|i{aC
 either good or bad, but thinking makes it so: to me
 entertainment than yours. You are welcome: but my
 entertainment to Laertes before you fall to play.
 epitaph than their ill report while you live.
-eqvnht
-eszlxqlloxnxulf
-euzwwfm
 excellent canopy, the air, look you, this brave
 excellent voice, in this little organ; yet cannot
 exclaim against their own succession?
 express and admirable! in action how like an angel!
+[#2?fJ|'1I
+f)%|0{7T
 fashion, and so berattle the common stages--so they
 fellowship in a cry of players, sir?
-fghmcwf
 find him not there, seek him i' the other place
 first and now, was and is, to hold, as 'twere, the
 fit.
@@ -5181,15 +5187,10 @@ for there be of them that will themselves laugh, to
 for you; and here's some for me: we may call it
 friend! thy face is valenced since I saw thee last:
 from the purpose of playing, whose end, both at the
-frpsbzsz
-fvzacsjqtcx
-fzmefhwqovftu
 gaffs his kibe. How long hast thou been a
 gain-giving, as would perhaps trouble a woman.
 gallows is built stronger than the church: argal,
 gambols? your songs? your flashes of merriment,
-gbirktatkpnbs
-gbmqqceypcfjf
 gentleman but gardeners, ditchers, and grave-makers:
 gets the love of Gonzago's wife.
 gleaned, it is but squeezing you, and, sponge, you
@@ -5205,8 +5206,7 @@ grave's this, sirrah?
 great article; and his infusion of such dearth and
 great folk should have countenance in this world to
 great wager on your head: sir, this is the matter,--
-gxmlgziltegvbu
-gxyotzlsngx
+hDd`SG'
 harmony; I have not the skill.
 has given you one face, and you make yourselves
 have bad dreams.
@@ -5230,10 +5230,7 @@ his cases, his tenures, and his tricks? why does he
 his recognizances, his fines, his double vouchers,
 his recoveries: is this the fine of his fines, and
 historical-pastoral, tragical-historical, tragical-
-hjzztwejxpxb
-hlcbqpxevdjfh
-hleniaw
-hlvcvcksajjzq
+hmNs;uP*
 hold the laying in--he will last you some eight year
 honest method, as wholesome as sweet, and by very
 hope a great man's memory may outlive his life half
@@ -5241,8 +5238,9 @@ horses: against the which he has imponed, as I take
 how infinite in faculty! in form and moving how
 how the knave jowls it to the ground, as if it were
 hundred ducats a-piece for his picture in little.
+i0EKyNXrR
+iXbup@6(/
 if not, I will gain nothing but my shame and the odd hits.
-ifyercwpnnyhk
 imagination to give them shape, or time to act them
 in. What should such fellows as I do crawling
 in apprehension how like a god! the beauty of the
@@ -5259,7 +5257,6 @@ in that. I will speak to this fellow. Whose
 in the city? are they so followed?
 in the fool that uses it. Go, make you ready.
 into amazement and admiration.
-ioyuqnq
 is a sore decayer of your whoreson dead body.
 is a strumpet. What's the news?
 is mad, and sent into England.
@@ -5278,16 +5275,7 @@ it is not so:--it begins with Pyrrhus:--
 it, six French rapiers and poniards, with their
 it; the age is grown so picked that the toe of the
 it would not much approve me. Well, sir?
-iuhjgq
-iwzsvjdoy
-ixiusdyl
-iywfdrkhhlf
-jebjr
-jlrrcxmo
-jmclea
-jrrdhvvk
-kcoks
-kebikc
+kUX=i
 keep counsel; they'll tell all.
 king, and eat of the fish that hath fed of that worm.
 king best service in the end: he keeps them, like
@@ -5296,7 +5284,6 @@ knocked about the mazzard with a sexton's spade:
 know him. He hath much land, and fertile: let a
 know himself.
 know the dressy age dotes on--only got the tune of
-kovci
 lady and mistress! By'r lady, your ladyship is
 laid on him by them, in his meed he's unfellowed.
 late innovation.
@@ -5310,7 +5297,6 @@ let to know it is.
 liberal-conceited carriages; that's the French bet
 liberty, these are the only men.
 likeness: this was sometime a paradox, but now the
-lirosbkczjn
 live; the rest shall keep as they are. To a
 longer than they can sing? will they not say
 lord, I will most humbly take my leave of you.
@@ -5319,7 +5305,6 @@ love me, hold not off.
 love, remember: and there is pansies. that's for thoughts.
 love; very near this. I'll speak to him again.
 lungs are tickled o' the sere; and the lady shall
-lxuwmdtxajzwy
 made me mad. I say, we will have no more marriages:
 maggots: your fat king and your lean beggar is but
 majesty bade me signify to you that he has laid a
@@ -5328,7 +5313,6 @@ man, I am most dreadfully attended. But, in the
 mark it. You say right, sir: o' Monday morning;
 marry, marry a fool; for wise men know well enough
 mason, the shipwright, or the carpenter?
-mdigeysvr
 me! You would play upon me; you would seem to know
 me, an absolute gentleman, full of most excellent
 meeting between him and my daughter.--My honourable
@@ -5340,7 +5324,6 @@ me to the top of my bent. I will come by and by.
 might be the pate of a politician, which this ass
 might it not?
 mirror up to nature; to show virtue her own feature,
-mmzfjthlshygui
 modesty as cunning. I remember, one said there
 modesty enough, and likelihood to lead it: as
 months ago, and not forgotten yet? Then there's
@@ -5353,7 +5336,6 @@ mouth, and it will discourse most eloquent music.
 move
 much more handsome than fine. One speech in it I
 must show fairly outward, should more appear like
-muwjfjcsvy
 my beck than I have thoughts to put them in,
 my father lived, give twenty, forty, fifty, an
 my good friends, deserved at the hands of fortune,
@@ -5369,7 +5351,6 @@ nearer to heaven than when I saw you last, by the
 neither, in respect of his quick sail. But, in the
 never acted; or, if it was, not above once; for the
 nick-name God's creatures, and make your wantonness
-nmcjwvmd
 no more of his purchases, and double ones too, than
 northerly.
 not.
@@ -5378,11 +5359,9 @@ not imagination trace the noble dust of Alexander,
 now; if it be not now, yet it will come: the
 now o'er-reaches; one that would circumvent God,
 now, to mock your own grinning? quite chap-fallen?
-nqwxgmozjzx
 nunnery, go.
 nunnery, go: farewell. Or, if thou wilt needs
-nyrgto
-obtqzhxptzwg
+-nvr(
 odds. But thou wouldst not think how ill all's here
 o'erhanging firmament, this majestical roof fretted
 o'erweigh a whole theatre of others. O, there be
@@ -5390,12 +5369,9 @@ offends me to the soul to hear a robustious
 of infinite jest, of most excellent fancy: he hath
 of my servants, for, to speak to you like an honest
 of your quality; come, a passionate speech.
-ojtfxbsqegndta
 one man picked out of ten thousand.
-orcmillun
 or come tardy off, though it make the unskilful
 or nine year: a tanner will last you nine year.
-orraswwxaix
 or, rather, as you say, my mother: therefore no
 or whensoever, provided I be so able as now.
 our youth, by the obligation of our ever-preserved
@@ -5405,10 +5381,8 @@ outstretched heroes the beggars' shadows. Shall we
 own defence?
 pardon thereunto, recount the occasion of my sudden
 pate full of fine dirt? will his vouchers vouch him
-pcniydytbdqels
 peasant comes so near the heel of the courtier, he
 periwig-pated fellow tear a passion to tatters, to
-pkbxifhxq
 play, I remember, pleased not the million; 'twas
 players--as it is most like, if their means are no
 players that I have seen play, and heard others
@@ -5425,25 +5399,16 @@ pronounced:
 proud, revengeful, ambitious, with more offences at
 providence in the fall of a sparrow. If it be now,
 purpose, confess thyself--
-pysthqa
-qgwslrzdvi
-qncdshracfvravd
-qouvjngkwccshoj
 quality that it is but a shadow's shadow.
 question of the play be then to be considered:
 question to thee: if thou answerest me not to the
-qvbblvhqsltle
 rareness, as, to make true diction of him, his
 readiness is all: since no man has aught of what he
 replication should be made by the son of a king?
 responsive to the hilts, most delicate carriages,
 rewards, his authorities. But such officers do the
 ring. Masters, you are all welcome. We'll e'en
-rovtcgyfemcr
-rpbcr
-rqlvsiwocpbdp
-rslzepg
-samgwoqmlw
+sDn'/hkbY^V}h}
 savoury, nor no matter in the phrase that might
 say an old man is twice a child.
 say her mind freely, or the blank verse shall halt
@@ -5464,10 +5429,7 @@ sings at grave-making?
 sir.
 sir, such answer as I can make, you shall command;
 sir, was Yorick's skull, the king's jester.
-skrjimflla
 sleeps: say on: come to Hecuba.
-slqmeloasmp
-snbwcssxruysxd
 snow, thou shalt not escape calumny. Get thee to a
 so inoculate our old stock but we shall relish of
 something: where did I leave?
@@ -5480,7 +5442,6 @@ stairs into the lobby.
 stands the man; good; if the man go to this water,
 start not so wildly from my affair.
 steward, that stole his master's daughter.
-stoqzgedgvwtqlo
 stoup of liquor.
 straight: the crowner hath sat on her, and finds it
 strutted and bellowed that I have thought some of
@@ -5489,6 +5450,7 @@ substance of the ambitious is merely the shadow of a dream.
 such-a-one's horse, when he meant to beg it; might it not?
 suffer this rude knave now to knock him about the
 sweet lord! How dost thou, good lord?' This might
+tbp0^Xk/p}'N=?{
 tears in's eyes. Pray you, no more.
 thank you: and sure, dear friends, my thanks are
 that I love passing well.
@@ -5561,12 +5523,6 @@ time: after your death you were better have a bad
 time gives it proof. I did love you once.
 'tis for the dead, not for the quick; therefore thou liest.
 'tis not to come; if it be not to come, it will be
-tjchec
-tjhfpydptm
-tjwbszonvsa
-tmvbyqngq
-tnazqdbrqn
-tnfanwljsiz
 to his purgation would perhaps plunge him into far
 tongues else for's turn.
 too dear a halfpenny. Were you not sent for? Is it
@@ -5577,7 +5533,6 @@ to the court? for, by my fay, I cannot reason.
 to't like French falconers, fly at any thing we see:
 touches us not: let the galled jade wince, our
 town-crier spoke my lines. Nor do not saw the air
-tphtnzmio
 tragedians of the city.
 transform honesty from what it is to a bawd than the
 truepenny?
@@ -5585,19 +5540,17 @@ truly in my youth I suffered much extremity for
 'twas so indeed.
 'twere,--I cannot tell how. But, my lord, his
 tyrannically clapped for't: these are now the
-tzgkgqroqbulr
-tzljuqtjybcbpe
-tzthcvppwuuc
+uiv]+K:iy)
 uncle-father and aunt-mother are deceived.
 unmannerly.
-upiriqidgmo
+u&rk7hDNW:3xdN
 variable service, two dishes, but to one table:
+vcI%-&]=o
 verity of extolment, I take him to be a soul of
 very conveyances of his lands will hardly lie in
 very rags, to split the ears of the groundlings, who
-vgqdqhyljbw
-vucaesiztb
-vvtjzlbqdcek
+vyFS}_
+w<;aCWs%3
 wards and dungeons, Denmark being one o' the worst.
 was a fishmonger: he is far gone, far gone: and
 was converted, might they not stop a beer-barrel?
@@ -5616,7 +5569,6 @@ whether you were sent for, or no?
 which your modesties have not craft enough to colour:
 wholesome answer, I will do your mother's
 wilfully seeks her own salvation?
-wiphpsawldgbqn
 with as much speed as thou wouldst fly death. I
 withers are unwrung.
 with golden fire, why, it appears no other thing to
@@ -5630,12 +5582,8 @@ worm is your only emperor for diet: we fat all
 would come to immediate trial, if your lordship
 would vouchsafe the answer.
 wrinkled, their eyes purging thick amber and
-wwvcxn
-xdeserldvyo
-xxxpxgpqgnd
-xzppvzagdwu
+|xkV:]K\X8?
 yesty collection, which carries them through and
-ygkxfuxjodynttm
 yield them,
 you.
 you any further trade with us?
@@ -5657,12 +5605,4 @@ you, sir; it comes from the ambassador that was
 you, trippingly on the tongue: but if you mouth it,
 you: we coted them on the way; and hither are they
 you:--why do you go about to recover the wind of me,
-yuiqpemhjvi
-yukckbkca
-yxanqzxfeyrz
-yzjymfptv
-zfghvs
-zqspez
-zqyhvvoisbe
-zvttjuibghzwph
-zwxhbichps
+)z+ejhNN

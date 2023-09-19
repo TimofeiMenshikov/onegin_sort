@@ -76,10 +76,13 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 	STRCMP_DUMP(printf("strlen1 is %zd\n", strlen1));
 	STRCMP_DUMP(printf("strlen2 is %zd\n", strlen2));
 
+	bool return1 = false;
+	bool return2 = false;
+
 	while (true)
 	{
-		STRCMP_DUMP(printf("char_number1 is %zd\n", char_number1));
-		STRCMP_DUMP(printf("char_number2 is %zd\n", char_number2));
+		STRCMP_DUMP(printf("char_number1 is %zd, symbol is %c(%d)\n", char_number1, str1[char_number1], str2[char_number2]));
+		STRCMP_DUMP(printf("char_number2 is %zd, symbol is %c(%d)\n", char_number2, str2[char_number2], str2[char_number2]));
 
 		if ((char_number1 < 0) && (char_number2 < 0))
 		{
@@ -96,6 +99,7 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 		if (char_number2 < 0)
 		{
 			STRCMP_DUMP( printf("FIRST_IS_RIGHT, because there is no more letters in str2\n"));
+
 			return FIRST_IS_RIGHT;
 		}
 
@@ -104,8 +108,9 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 			char_number1--;
 			if (char_number1 < 0)
 			{
-				STRCMP_DUMP(printf("FIRST_IS_LEFT, because there is no more letters in str1\n"));
-				return FIRST_IS_LEFT;
+
+				return1 = true;
+				break;
 			}
 		}
 
@@ -116,9 +121,29 @@ enum comp_two_str compare_two_strings_reversed(const char* const str1, const cha
 			char_number2--;
 			if (char_number2 < 0)
 			{
-				STRCMP_DUMP(printf("FIRST_IS_RIGHT, because there is no more letters in str2\n"));
-				return FIRST_IS_RIGHT;
+
+				return2 = true;
+				break;
 			}
+		}
+
+
+		if ((return1 == true) && (return2 == true))
+		{
+			STRCMP_DUMP(printf("IS EQUAL, because there is no more letters in str1 and str2\n"));
+			return IS_EQUAL;
+
+		}
+
+		if (return1 == true)
+		{
+			STRCMP_DUMP(printf("FIRST_IS_LEFT, because there is no more letters in str1\n"));
+			return FIRST_IS_LEFT;
+		}
+		if (return2 == true)
+		{
+			STRCMP_DUMP(printf("FIRST_IS_RIGHT, because there is no more letters in str2\n"));
+			return FIRST_IS_RIGHT;
 		}
 
 		// STRCMP_DUMP(printf("while 2 passed\n"));
