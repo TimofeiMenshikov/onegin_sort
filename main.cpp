@@ -43,18 +43,18 @@ void free_all(char** text, char* buffer, ssize_t* string_lengths)
 	/* free buffer */
 	free(buffer);
 	buffer = 0;
-	printf("buffer is free\n");
+	DEBUG_EXEC(printf("buffer is free\n"));
 	/* free buffer */
 
 	/* free text */
 	free(text);
-	printf("text is free\n");
+	DEBUG_EXEC(printf("text is free\n"));
 	text = 0;
 	/* free text*/
 
 	/* free string_lenghts */
 	free(string_lengths);
-	printf("string_lenghts is free\n");
+	DEBUG_EXEC(printf("string_lenghts is free\n"));
 	string_lengths = 0;
 	/* free string_lenghts */
 }
@@ -117,7 +117,7 @@ int main()
 
 	char** text = (char**) calloc(n_strings, sizeof(char*));
 
-	printf("calloc text \n");
+	DEBUG_EXEC(printf("calloc text \n"));
 
 	link_text_and_buf(text, buffer, buffer_size);
 
