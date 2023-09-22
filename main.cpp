@@ -6,6 +6,7 @@
 #include "include/string_compare.h"
 #include "include/sort.h"
 #include "include/print.h"
+#include "include/main.h"
 
 
 void link_text_and_buf(char** const text,  char* const buffer, const size_t buffer_size)
@@ -53,22 +54,6 @@ void free_all(char** text, char* buffer, ssize_t* string_lengths)
 	/* free string_lenghts */
 }
 
-ssize_t my_strlen(const char* const str)
-{
-	if (str[0] == '\0')
-	{
-		return 0;
-	}
-
-	ssize_t char_number = 0;
-	//printf("string to find is %s\n", str);
-	while(str[char_number] != '\0')
-	{
-		char_number++;
-	}
-	return char_number;
-}
-
 
 ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 {
@@ -79,7 +64,7 @@ ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 
 	for (ssize_t n_string = 0; n_string < n_strings; n_string++)
 	{
-		string_lengths[n_string] = my_strlen(text[n_string]);
+		string_lengths[n_string] = strlen(text[n_string]);
 		//printf("find strlen %zu/%zu string is %s\n", n_string, n_strings - 1, text[n_string]);
 	}
 
@@ -89,28 +74,32 @@ ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 }
 
 
+FILE* open_file(const char* const filename, const char* const modificator)
+{
+	FILE* inputfile = fopen(filename, modificator);
+
+	assert(inputfile);
+
+	return inputfile;
+}
+
+
 int main()
 {
 	struct stat buffer_info;
 
-	char inputfile_name[] = "txt/input/onegin.txt";
+	char filename[] = "txt/input/onegin.txt";
 
-	stat(inputfile_name, &buffer_info);
+	FILE* inputfile = open_file(filename, "r");
 
-	FILE* inputfile = fopen(inputfile_name, "r");
-
-	assert(inputfile);
+	stat(filename, &buffer_info);
 
 	char* buffer = (char*) calloc(buffer_info.st_size / sizeof(char) + 1, sizeof(char));
 
 	size_t buffer_size = fread(buffer, sizeof(char), buffer_info.st_size, inputfile) + 1;
 
 
-	//buffer_size = find_real_buf_size(buffer, buffer_size);
-
 	buffer[buffer_size - 1] = '\0';
-
-	//print_buffer(buffer, buffer_size);
 
 	fclose(inputfile);
 
@@ -126,11 +115,7 @@ int main()
 
 	link_text_and_buf(text, buffer, buffer_size);
 
-	ssize_t* string_lengths = find_str_lens(text, n_strings); // запуск строго после find_n_strings, так как использует \0 при расчете длин строк
-
-	//ssize_t maxlen = find_max_str(string_lengths, n_strings);
-
-	//printf("the biggest len of string is %zu\n", maxlen);
+	ssize_t* string_lengths = find_str_lens(text, n_strings); // запуск строго после nulled_buffer, так как использует \0 при расчете длин строк
 
 	print_and_sort(text, n_strings, string_lengths);
 
