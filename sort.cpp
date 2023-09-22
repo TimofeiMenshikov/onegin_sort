@@ -20,8 +20,6 @@ void my_qsort(char **arr, const ssize_t first, const ssize_t last, enum comp_two
 
         SORT_DUMP(printf("middle is <%s>\n", middle));
 
-        enum comp_two_str cmp = INVALID_NUMBER;
-
         do
         {
             while (comparator(arr[left], middle, string_lengths[left], middle_len) == FIRST_IS_LEFT)
