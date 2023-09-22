@@ -3,6 +3,7 @@
 #include "include/sort.h"
 #include "include/print.h"
 #include "include/main.h"
+#include "include/printf_debug.h"
 
 
 void print_text(const char* const * const text, const size_t n_strings, FILE* outputfile)
@@ -15,7 +16,7 @@ void print_text(const char* const * const text, const size_t n_strings, FILE* ou
 }
 
 
-void print_one_sort(char** const text,  const size_t n_strings, ssize_t* string_lengths, char* filename,  enum comp_two_str (*comparator)(const char* const str1, const char* const str2, const ssize_t strlen1, const ssize_t strlen2))
+void print_one_sort(char** const text,  const size_t n_strings, ssize_t* const string_lengths, const char* const filename,  enum comp_two_str (*comparator)(const char* const str1, const char* const str2, const ssize_t strlen1, const ssize_t strlen2))
 {
 	FILE* outputfile = fopen(filename, "w");
 
@@ -47,7 +48,7 @@ void print_string_lenghts(const ssize_t* const string_lengths, const size_t n_st
 {
 	for (size_t n_string = 0; n_string < n_strings; n_string++)
 	{
-		//printf("string number: %zu, string length: %zu\n", n_string, string_lengths[n_string]);
+		DEBUG_EXEC(printf("string number: %zu, string length: %zu\n", n_string, string_lengths[n_string]));
 	}
 }
 
@@ -65,7 +66,6 @@ void print_state( char** arr, const ssize_t size, const ssize_t left, const ssiz
 {
     for (ssize_t number = 0; number < size; number++)
     {
-
         if (number == left)
         {
             putchar('{');
@@ -74,13 +74,10 @@ void print_state( char** arr, const ssize_t size, const ssize_t left, const ssiz
         {
             putchar(' ');
         }
-
  
         putchar(' ');
 
-
         printf("%s", arr[number]);
-
 
         putchar(' ');
 
@@ -92,7 +89,6 @@ void print_state( char** arr, const ssize_t size, const ssize_t left, const ssiz
         {
             putchar(' ');
         }
-
     }
     putchar('\n');
 }

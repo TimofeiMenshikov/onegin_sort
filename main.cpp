@@ -7,6 +7,8 @@
 #include "include/sort.h"
 #include "include/print.h"
 #include "include/main.h"
+#include "include/printf_debug.h"
+
 
 
 void link_text_and_buf(char** const text,  char* const buffer, const size_t buffer_size)
@@ -17,18 +19,21 @@ void link_text_and_buf(char** const text,  char* const buffer, const size_t buff
 
 	for (size_t char_number = 0; char_number < buffer_size - 1; char_number++) // buffer_size - 1, чтобы не считывало последний \0
 	{
-		//printf("pos %zu: %c(%d)\n", char_number, buffer[char_number], buffer[char_number]);
+		DEBUG_EXEC(printf("pos %zu: %c(%d)\n", char_number, buffer[char_number], buffer[char_number]));
+
 		if (buffer[char_number] == '\0')
 		{
 			text[text_pos] = buffer + char_number + 1; // находим конец строки и присваеваем адрес следующего элемента элементу массива 
-			//printf("added link number %zu: read element %c(%d) next element %c(%d)\n", text_pos, buffer[char_number], buffer[char_number], buffer[char_number + 1], buffer[char_number + 1]);
+
+			DEBUG_EXEC(printf("added link number %zu: read element %c(%d) next element %c(%d)\n", text_pos, buffer[char_number], buffer[char_number], buffer[char_number + 1], buffer[char_number + 1]));
+
 			text_pos++;
 		}
 	}
 
 	for (size_t i = 0; i < text_pos; i++)
 	{
-		//printf("addres number %zu is %p\n", i, text[i]);
+		DEBUG_EXEC(printf("addres number %zu is %p\n", i, text[i]));
 	}
 }
 
@@ -59,16 +64,17 @@ ssize_t* find_str_lens(const char* const * const text, ssize_t n_strings)
 {
 	ssize_t* string_lengths = (ssize_t*) calloc(n_strings, sizeof(ssize_t)); 
 
-	printf("calloc string_lengths\n");
+	DEBUG_EXEC(printf("calloc string_lengths\n"));
 
 
 	for (ssize_t n_string = 0; n_string < n_strings; n_string++)
 	{
 		string_lengths[n_string] = strlen(text[n_string]);
-		//printf("find strlen %zu/%zu string is %s\n", n_string, n_strings - 1, text[n_string]);
+
+		DEBUG_EXEC(printf("find strlen %zu/%zu string is %s\n", n_string, n_strings - 1, text[n_string]));
 	}
 
-	printf("prepare to return string_lengths\n");
+	DEBUG_EXEC(printf("prepare to return string_lengths\n"));
 
 	return string_lengths;
 }
